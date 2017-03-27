@@ -1,0 +1,134 @@
+@topPanelHeight: 60px;
+
+//Colors
+@topPanelColor: rgba(255, 255, 255, 0.79);
+@descriptionColor: rgba(64, 255, 152, 0.19);
+@menuItemColor: #000b5a;
+@siteDescriptionFirstColor: #E0EAFC;
+@siteDescriptionSecColor: #CFDEF3;
+@logoFirstColor: #28ceff;
+@logoSecColor: #09fa74;
+@footerColor: #3c3c3c;
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1000%;
+}
+
+.footer {
+  background-color: @footerColor;
+  height: 120px;
+
+}
+
+.footer-info{
+  padding: 0 30px;
+
+}
+
+.footer-titles{
+  display: inline-block;
+  margin: 0 50px;
+  p{
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+    margin: 0 10px;
+    font-family: Papyrus, cursive;
+  }
+}
+
+.copyright{
+  color: white;
+  display: block;
+  margin: 2px 5px;
+}
+
+.footer-lg{
+  display: inline-block;
+  color: white;
+  font-family: cursive;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/photo.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.image-text {
+  margin-top: 200px;
+  text-align: center;
+  color: white;
+  font-family: Brush Script MT, Papyrus, cursive; //TODO: общие шрифты подобрать
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: @topPanelColor;
+  z-index: 5;
+  top: 0;
+  height: @topPanelHeight;
+}
+
+.btn-lg {
+  overflow: hidden;
+  color: #373737;
+  margin: 7px 10px;
+  float: right;
+}
+
+.logo-text {
+  display: inline-block;
+  background: linear-gradient(to right, @logoFirstColor, @logoSecColor);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: Brush Script MT, Papyrus, cursive;
+  font-size: 320%;
+}
+
+.btn-logo {
+  margin-top: -5px;
+  display: inline-block;
+}
+
+.glyphicon.glyphicon-globe {
+  font-size: 280%;
+  color: black;
+}
+
+.site-description {
+  height: 500px;
+  background: linear-gradient(to right, @siteDescriptionFirstColor, @siteDescriptionSecColor);
+}
+
+.top-menu {
+  margin-left: 30px;
+}
+.other-content{
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  //height: 100%;
+}
+.menu-item {
+  display: block !important;
+  margin-top: -20px;
+  margin-bottom: 0;
+  color: @menuItemColor;
+  font-size: 23px;
+  font-family: cursive;
+  padding: 0 24px;
+
+}
+
+.menu-item:hover, .btn-lg:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy; //TODO doesn't work
+}
