@@ -2,27 +2,31 @@
 
 //Colors
 @topPanelColor: rgba(255, 255, 255, 0.79);
-@descriptionColor: rgba(64, 255, 152, 0.19);
-@menuItemColor: #000f76;
+@descriptionColor: rgb(0, 23, 75);
+@menuItemColor: #515151;
 @siteDescriptionColor: white;
-@logoFirstColor: #28ceff;
-@logoSecColor: #09fa74;
+@logoFirstColor: #0024a5;
+@logoSecColor: #50a0fa;
 @footerColor: #3c3c3c;
 @descriptionTextColor: #272727;
+@bottomColor: rgba(239, 255, 255, 0.87);
+@joinColor: rgba(226, 239, 255, 0.55);
 
 body {
   margin: 0;
-  font-family: cursive;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 1000%;
+*{
+  font-family: Didot, sans-serif; //todo
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: @footerColor;
   height: 120px;
-
 }
 
 .footer-info {
@@ -38,7 +42,6 @@ h1 {
     display: inline-block;
     color: white;
     margin: 0 10px;
-    font-family: Papyrus, cursive;
   }
 }
 
@@ -55,40 +58,78 @@ h1 {
   font-family: cursive;
 }
 
+h1 {
+  font-size: 900%;
+}
+
 .image {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../images/photo.jpeg") no-repeat;
+  background: url("../images/photo2.jpeg") no-repeat;
   background-size: cover;
 }
 
-.image-text {
-  margin-top: 200px;
-  text-align: center;
-  color: white;
-  font-family: Brush Script MT, Papyrus, cursive; //TODO: общие шрифты подобрать
+.img1{
+  background: url("../images/photo.jpeg") no-repeat;
 }
 
-.header {
+.img2{
+  background: url("../images/winter.jpeg") no-repeat;
+  right: 0;
+}
+
+.img3{
+  background: url("../images/ocean.jpeg") no-repeat;
+}
+
+.bottom-image{
+  position: absolute;
+  width: 50%;
+  height: 400px;
+  background-size: cover;
+}
+
+.bottom-text{
+  font-size: 50px;
+  padding: 160px 240px;
+  float: right
+}
+
+.left{
+  padding: 160px 210px;
+  float: none;
+}
+
+.image-text {
+  margin-top: 270px;
+  margin-left: 47%;
+  color: @menuItemColor;
+  font-family: Brush Script MT, Papyrus, cursive;
+}
+
+.top-panel {
   width: 100%;
   position: fixed;
-  background-color: @topPanelColor;
+  background-color: rgba(0, 0, 0, 0);
   z-index: 5;
   top: 0;
   height: @topPanelHeight;
 }
 
-.btn-lg {
-  overflow: hidden;
-  color: #373737;
-  margin: 7px 10px;
+.scrolled-top{
+  background-color: @topPanelColor;
+}
+
+.top-menu{
+  margin-top: 15px;
+  margin-right: 30px;
   float: right;
 }
 
 .logo-text {
   display: inline-block;
-  background: linear-gradient(to right, @logoFirstColor, @logoSecColor);
+  background: linear-gradient(to bottom right, @logoFirstColor, @logoSecColor);//todo
   -webkit-background-clip: text;
   color: transparent;
   font-family: Brush Script MT, Papyrus, cursive;
@@ -106,20 +147,19 @@ h1 {
 }
 
 .site-description {
-  height: 800px;
+  height: 815px;
   background-color: @siteDescriptionColor;
-}
-
-.animate-description {
 
 }
+
 
 .d1 {
   display: none;
   margin: auto;
+  text-align: center;
   padding-top: 22px;
   font-size: 34px;
-  width: 32%;
+  width: 100%;
 }
 
 .d2 {
@@ -155,12 +195,12 @@ h1 {
   border: 2px solid #00C59E;
   font-weight: 600;
   font-size: 20px;
-  font-family: sans-serif;
   margin: 0 20px;
 }
 
 .my-btn:hover {
   background: #00C59E;
+  color: white;
 }
 
 .my-image{
@@ -169,16 +209,43 @@ h1 {
 }
 
 .im1 {
+  z-index:1;
+  top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transform: rotate(5deg);
+  left: 74%;
   background: url("../images/map.jpeg") no-repeat;
+  position: absolute;
+  width: 410px;
+  height: 310px;
+  background-size: cover;
 }
 
 .im2 {
-  background: url("../images/map2.jpg") no-repeat;
+  z-index: 2;
+  top: 263px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  left: 70%;
+  background: url("../images/bicycle.jpeg") no-repeat;
+  position: absolute;
+  width: 400px;
+  height: 370px;
+  background-size: cover;
 }
 
 .im3 {
-  background: url("../images/bicycle.jpeg") no-repeat;
+  z-index: 3;
+  top: 410px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transform: rotate(12deg);
+  left: 70%;
+  background: url("../images/map2.jpg") no-repeat;
+  position: absolute;
+  width: 480px;
+  height: 360px;
+  background-size: cover;
 }
+
 
 .animate-description .d1, .animate-description .d2, .animate-description .reason {
   display: block;
@@ -213,7 +280,6 @@ h1 {
 .description {
   padding: 50px;
   color: @descriptionTextColor;
-  font-family: cursive;
 }
 
 .top-menu {
@@ -228,16 +294,56 @@ h1 {
 
 .menu-item {
   display: block !important;
-  margin-top: -20px;
-  margin-bottom: 0;
   color: @menuItemColor;
-  font-size: 23px;
-  font-family: cursive;
+  font-size: 25px;
   padding: 0 24px;
 }
 
 .menu-item:hover, .btn-lg:hover {
   text-decoration: underline;
   text-decoration-style: wavy; //TODO doesn't work
+}
+
+.bottom-content{
+  background-color: @bottomColor;
+  height: 400px;
+}
+
+.join-us{
+  background-color: @descriptionColor;
+  height: 380px;
+}
+
+.join-us-text{
+  font-size: 40px;
+  padding-top: 70px;
+  margin-left: 25%;
+  color: white;
+}
+
+.btn-join{
+  border: 2px solid @joinColor !important;
+  margin-left: 45%;
+  padding: 17px 37px;
+}
+
+.btn-join:hover{
+  background: @joinColor;
+}
+
+.item{
+  height: 400px !important;
+}
+
+#myCarousel2{
+  float: right;
+}
+#myCarousel3{
+  float: left;
+}
+.carousel{
+  clear: both;
+  display: block;
+  width: 50%;
 }
 

@@ -17,3 +17,47 @@ $(document).on("scroll", function () {
     // if (isScrolledIntoView($elem, $window))
         $elem.addClass("animate-description")
 });
+
+$(function(){
+    $(window).scroll(function(e) {
+        if($(this).scrollTop()>20){
+            $('.top-panel').addClass('scrolled-top');
+        }
+        else if($(this).scrollTop()==0){
+            $('.top-panel').removeClass('scrolled-top');
+        }
+    });
+});
+
+
+$('#go').click(function(){
+    document.location.href = "way.html";
+});
+
+$('#where-to-go').click(function(){
+
+});
+
+$('#home').click(function(){
+    document.location.href = "index.html";
+});
+
+$('#way').click(function(){
+    document.location.href = "way.html";
+});
+
+$('#hotels').click(function(){
+
+});
+
+$('#events').click(function(){
+
+});
+
+$('#login').click(function(){
+
+});
+
+$('#join').click(function(){
+
+});
