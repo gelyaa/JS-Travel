@@ -63,5 +63,16 @@ $('#join').click(function(){
 });
 
 $(function() {
-    $("#datepicker").datepicker();
+    var inp = $("#there-input");
+    var d = new Date(), s = d.getFullYear() + '.' + (d.getMonth()+1) + '.' + (d.getDate());
+    inp.datepicker();
+    inp.attr("placeholder", s);
 });
+
+$(function() {
+    var inp = $("#back-input");
+    var d = new Date(), s = d.getFullYear() + '.' + (d.getMonth()+1) + '.' + (d.getDate() + 1);
+    inp.datepicker();
+    inp.attr("placeholder", s);
+});
+
