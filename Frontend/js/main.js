@@ -61,3 +61,7 @@ $('#login').click(function(){
 $('#join').click(function(){
 
 });
+
+$(function() {
+    $("#datepicker").datepicker();
+});
