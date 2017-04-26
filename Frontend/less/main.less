@@ -66,14 +66,19 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.im1{
   background: url("../images/photo2.jpeg") no-repeat;
   background-size: cover;
 }
 
-.image2{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.im2{
+  background: url("../images/etwas.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im3{
   background: url("../images/etwas.jpeg") no-repeat;
   background-size: cover;
 }
@@ -89,6 +94,11 @@ h1 {
 
 .img3{
   background: url("../images/ocean.jpeg") no-repeat;
+}
+
+.img4{
+  background: url("../images/dog.jpeg") no-repeat;
+  right: 0;
 }
 
 .bottom-image{
@@ -114,6 +124,10 @@ h1 {
 .text2{
   padding: 160px 225px;
   float: none;
+}
+
+.text4{
+  padding: 160px 235px;
 }
 
 .image-text {
@@ -272,7 +286,6 @@ h1 {
 
 .menu-item:hover, .btn-lg:hover {
   text-decoration: underline;
-  text-decoration-style: wavy; //TODO doesn't work
 }
 
 .bottom-content{
@@ -354,12 +367,15 @@ h1 {
 }
 
 .box-btn{
-  position: relative;
-  bottom: -250px;
-  left: 55px;
+  position: absolute;
+ // margin: auto;
+ // bottom: -250px;
+  left: 45%;
+  top: 390px;
 }
 
 .btn-find {
+  margin: auto;
   padding: 15px 33px;
   border: 2px solid rgba(149, 78, 58, 0.8);
 }
@@ -375,3 +391,59 @@ h1 {
   font-size: 20px;
 }
 
+.types{
+  margin-bottom: 20px;
+}
+.radio-trip{
+  margin-right: 25px;
+}
+
+.one-way-mode{
+  #to-input, #back-input, .to-label, .back-label{
+    display: none;
+  }
+}
+
+.name-lb{
+  position: relative;
+  top: 230px;
+  left: 50px;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.about-text{
+  position: relative;
+  margin: auto;
+  width: 600px;
+  height: 220px;
+  top: 380px;
+  font-size: 30px;
+}
+
+.mail{
+  font-weight: bold;
+}
+
+
+.about-photo {
+  z-index:1;
+  top: 80px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  left: 26%;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.stas{
+  background: url("../images/stas.jpg") no-repeat;
+  background-size: cover;
+}
+
+.angi{
+  left: 58%;
+  background: url("../images/angi.jpg") no-repeat center;
+  background-size: cover;
+}

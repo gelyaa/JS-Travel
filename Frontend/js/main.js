@@ -46,6 +46,10 @@ $('#way').click(function(){
     document.location.href = "way.html";
 });
 
+$('#about').click(function(){
+    document.location.href = "about.html";
+});
+
 $('#hotels').click(function(){
 
 });
@@ -64,15 +68,32 @@ $('#join').click(function(){
 
 $(function() {
     var inp = $("#there-input");
-    var d = new Date(), s = d.getFullYear() + '.' + (d.getMonth()+1) + '.' + (d.getDate());
+    var d = new Date() , s;
+    if(d.getMonth() < 9)  s = '0' + (d.getMonth() + 1 ) + '/' + (d.getDate() + 1) + '/' + d.getFullYear();
+    else s = (d.getMonth() + 1 ) + '/' + (d.getDate() + 1) + '/' + d.getFullYear();
     inp.datepicker();
     inp.attr("placeholder", s);
 });
 
 $(function() {
     var inp = $("#back-input");
-    var d = new Date(), s = d.getFullYear() + '.' + (d.getMonth()+1) + '.' + (d.getDate() + 1);
+    var d = new Date() , s;
+    if(d.getMonth() < 9) s = '0' + (d.getMonth() + 1 ) + '/' + (d.getDate() + 1) + '/' + d.getFullYear();
+    else s = (d.getMonth() + 1 ) + '/' + (d.getDate() + 1) + '/' + d.getFullYear();
     inp.datepicker();
     inp.attr("placeholder", s);
 });
+
+$("#return").change(function () {
+    $(this).prop('checked', true);
+    $("#one-way").prop('checked', false);
+    $(".box-line").removeClass("one-way-mode");
+});
+
+$("#one-way").change(function () {
+    $(this).prop('checked', true);
+    $("#return").prop('checked', false);
+    $(".box-line").addClass("one-way-mode");
+});
+
 
