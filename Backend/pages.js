@@ -1,12 +1,18 @@
 
-exports.mainPage = function(req, res) {
-    res.render('mainPage', {
+exports.home = function(req, res) {
+    res.render('home', {
         pageTitle: 'Travel'
     });
 };
 
-exports.orderPage = function(req, res) {
-    res.render('orderPage', {
+exports.way = function(req, res) {
+    res.render('way', {
+        pageTitle: 'Travel'
+    });
+};
+
+exports.about = function(req, res) {
+    res.render('about', {
         pageTitle: 'Travel'
     });
 };

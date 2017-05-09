@@ -1,53 +1,112 @@
 <% include common/header.ejs %>
 
-<div class="container-menu container-fluid">
-    <div class="menu container">
-        <h1 class="main-title" align="center"> Усi Пiци <span id="quantity" class="badge "> 9 </span></h1>
+<div class='image im1'>
 
-        <div class="menu-titles">
-
-            <a href="#" id="all-pizzas" class="active btn btn-link btn-title" style="text-decoration: none"> Усi </a>
-            <a href="#" id="meat-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> М'яснi </a>
-            <a href="#" id="pineapple-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З ананасами </a>
-            <a href="#" id="mushroom-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З грибами </a>
-            <a href="#" id="sea-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З морепродуктами </a>
-            <a href="#" id="veg-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> Вега </a>
-
-        </div>
-
-        <div class="row" id="pizza_list">
-
-
-        </div>
-    </div>
-</div>
-
-
-<div class=" panel right-panel no-orders">
-
-    <div class="right-title">
-
-        <div class="order-title"> Замовлення <span id="order-quantity" class="badge "> 0 </span>
-            <a href="#" class="btn btn-link" id="delete-order">Очистити замовлення</a>
-        </div>
-    </div>
-
-    <div class=" order-bill">
-        <span class="sum sum-order-title">Сума замовлення</span>
-        <span id="total-sum" class="sum sum-num"> 0 </span>
-        <span class="sum sum-num"> грн.</span>
-        <button class="btn btn-warning btn-block" id="order-btn" disabled>Замовити</button>
-    </div>
-
-    <div class="orders ">
-        <div class="empty-fridge">
-            <div class="no-orders-title"> Пусто в холодильнику ? </div>
-            <div class="no-orders-title"> Замовте піцу! </div>
-        </div>
-        <div id="orders-list"></div>
+    <div class="image-text">
+        <h1> Explore Earth <br> Begin Your Trip </h1>
     </div>
 
 </div>
 
+<section>
+    <div class="other-content">
+        <div class="site-description">
 
-<% include common/footer.ejs %>
+            <div class="description">
+
+                <h2 class="d1"> Let us make your trip better! </h2>
+                <h3 class="d2"> 7 Reasons To Travel With Us: </h3>
+
+                <div class="reasons">
+                    <h4 class="reason"> - Our algorithms find for you the most comfortbale and beneficial way to travel!
+                        <span class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - We propose only the best hotels! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - Discover what to do and where to go in any place on Earth! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - Get personal advice for professional travelling! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - Connect and communicate with another travellers! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - Get useful recommendations, that we give you, basing on your interests! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                    <h4 class="reason"> - Make your trip unforgettable and great! <span
+                                class="glyphicon glyphicon-ok green-gl"></span></h4>
+                </div>
+
+                <div class="buttons">
+
+                    <button id="where-to-go" class="btn my-btn btn-test"> Where to go ? </button>
+                    <button id="go" class="btn my-btn btn-go "> Begin your trip! </button>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="bottom-content">
+
+            <div class='bottom-image img1'> </div>
+            <p class="bottom-text text1"> Explore </p>
+
+        </div>
+
+        <div class="bottom-content">
+
+            <div class='bottom-image img2'> </div>
+            <p class="bottom-text text2"> Discover </p>
+
+        </div>
+
+        <div class="bottom-content">
+
+            <div class='bottom-image img3'> </div>
+            <p class="bottom-text text3"> Enjoy </p>
+
+        </div>
+
+        <div class="bottom-content">
+
+            <div class='bottom-image img4'> </div>
+            <p class="bottom-text text2 text4"> Inspire </p>
+
+        </div>
+
+        <div class="join-us">
+            <p class="join-us-text"> Become a part of our Travel Team </p>
+            <button id="join" class="btn my-btn btn-join "> Join </button>
+        </div>
+
+
+        <footer class=" footer">
+
+            <div class="footer-info">
+                <!--logo-text-->
+                <!--добавить можно лого чтоб был цвет и шрифт как на лого наверху -->
+                <h2 class="footer-lg "> Our Domain <br> Goes Here </h2>
+
+                <div class="footer-titles">
+                    <p id="about"> About & Contact </p>
+                </div>
+
+                <div class="copyright"> © 2017 </div>
+
+            </div>
+
+        </footer>
+    </div>
+</section>
+
+
+<!-- jQuery JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--Bootsrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--Own JavaScript -->
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
