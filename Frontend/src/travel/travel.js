@@ -111,18 +111,18 @@ $('#finish-quiz').click(function () {
     if ($('#q12').is(':checked')) {
         if ($('#q21').is(':checked')) {
 
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/1.jpeg) no-repeat");
             im.css("background-size", "cover");
 
             res += "China, Japan, Nepal ";
         }
         else if ($('#q22').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/2.jpeg) no-repeat");
             im.css("background-size", "cover");
             res += "Norway, Switzerland, Germany, Iceland, Finland, Alaska ";
         }
         else if ($('#q23').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/3.jpeg) no-repeat");
             im.css("background-size", "cover");
             if ($('#q31').is(':checked')) {
                 res += "Turkey Spain, Greece, Portugal ";
@@ -132,12 +132,12 @@ $('#finish-quiz').click(function () {
             }
         }
         else if ($('#q24').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/4.jpg) no-repeat");
             im.css("background-size", "cover");
             res += "USA, Germany, Japan, Singapore ";
         }
         else {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/5.jpg) no-repeat");
             im.css("background-size", "cover");
             res += "France, Italy, England, Switzerland, Spain, Portugal ";
         }
@@ -145,29 +145,29 @@ $('#finish-quiz').click(function () {
     }
     else {
         if ($('#q21').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/1.jpeg) no-repeat");
             im.css("background-size", "cover");
             res += "India, Vietnam, Bolivia, Cambodia ";
         }
         else if ($('#q22').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/2.jpeg) no-repeat");
             im.css("background-size", "cover");
             res += "West Ukraine, Russia, Kazakhstan, Uzbekistan, Lithuania, Bulgaria, Croatia ";
         }
         else if ($('#q23').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/3.jpeg) no-repeat");
             im.css("background-size", "cover");
             res += "Sri Lanka, Honduras, Dominican Republic, Ireland "
         }
         else if ($('#q24').is(':checked')) {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/4.jpg) no-repeat");
             im.css("background-size", "cover");
             res += "Argentina, Ireland, Hungary"
         }
         else {
-            im.css("background", "url(../www/assets/images/ocean.jpeg) no-repeat");
+            im.css("background", "url(../www/assets/images/5.jpg) no-repeat");
             im.css("background-size", "cover");
-            res += "Hungary, Ireland"
+            res += "Hungary, Ireland, Lithuania, Croatia, Greece"
         }
     }
     $("#result-quiz").html(res);
