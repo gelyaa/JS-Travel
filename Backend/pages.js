@@ -16,3 +16,15 @@ exports.about = function(req, res) {
         pageTitle: 'Travel'
     });
 };
+
+exports.login = function(req, res) {
+    res.render('login', {
+        pageTitle: 'Travel'
+    });
+};
+
+exports.write = function(req, res) {
+    res.render('write', {
+        pageTitle: 'Travel'
+    });
+};

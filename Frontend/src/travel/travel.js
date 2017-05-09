@@ -2,9 +2,6 @@
  * Created by macuser on 24.03.17.
  */
 
-function init() {
-    alert("hiiiii");
-}
 
 var $window = $(window);
 var $elem = $(".site-description")
@@ -63,14 +60,6 @@ $('#events').click(function(){
 
 });
 
-$('#login').click(function(){
-
-});
-
-$('#join').click(function(){
-
-});
-
 $(function() {
     var inp = $("#there-input");
     var d = new Date() , s;
@@ -100,5 +89,19 @@ $("#one-way").change(function () {
     $("#return").prop('checked', false);
     $(".box-line").addClass("one-way-mode");
 });
+
+$('#login').click(function () {
+    document.location.href = "login.html";
+});
+
+$('#join').click(function () {
+    document.location.href = "login.html";
+});
+$('#contactus').click(function () {
+    document.location.href = "write.html";
+});
+
+
+function init(){}
 
 exports.init = init;
