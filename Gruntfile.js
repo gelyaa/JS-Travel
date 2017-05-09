@@ -55,7 +55,7 @@ module.exports = function(grunt) {
     //Список завданнь по замовчування
     grunt.registerTask('default',
         [
-            'browserify:travel',
+            'browserify:travel'
             //Інші завдання які необхідно виконати
         ]
     );
