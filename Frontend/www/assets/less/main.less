@@ -11,13 +11,14 @@
 @descriptionTextColor: #272727;
 @bottomColor: rgba(239, 255, 255, 0.87);
 @joinColor: rgba(226, 239, 255, 0.55);
+@quizColor: rgba(255, 255, 255, 0.77);
 
 body {
   margin: 0;
   overflow-x: hidden;
 }
 
-*{
+* {
   font-family: Didot, sans-serif; //todo
 }
 
@@ -68,65 +69,71 @@ h1 {
   height: 100%;
 }
 
-.im1{
+.im1 {
   background: url("../images/photo2.jpeg") no-repeat;
   background-size: cover;
 }
 
-.im2{
+.im2 {
   background: url("../images/etwas.jpeg") no-repeat;
   background-size: cover;
 }
 
-.im3{
+.im3 {
   background: url("../images/etwas.jpeg") no-repeat;
   background-size: cover;
 }
 
-.img1{
-  background: url("../images/photo.jpeg") no-repeat;
+.im-test {
+  background: url("../images/birds.jpeg") no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
-.img2{
+.img1 {
+  background: url("../images/dog.jpeg") no-repeat;
+}
+
+.img2 {
   background: url("../images/winter.jpeg") no-repeat;
   right: 0;
 }
 
-.img3{
+.img3 {
   background: url("../images/ocean.jpeg") no-repeat;
 }
 
-.img4{
-  background: url("../images/dog.jpeg") no-repeat;
+.img4 {
+  background: url("../images/photo.jpeg") no-repeat;
   right: 0;
 }
 
-.bottom-image{
+.bottom-image {
   position: absolute;
   width: 50%;
   height: 400px;
   background-size: cover;
 }
 
-.bottom-text{
+.bottom-text {
   font-size: 50px;
   float: right
 }
 
-.text1{
+.text1 {
   padding: 160px 280px;
 }
 
-.text3{
+.text3 {
   padding: 160px 312px;
 }
 
-.text2{
+.text2 {
   padding: 160px 225px;
   float: none;
 }
 
-.text4{
+.text4 {
   padding: 160px 235px;
 }
 
@@ -146,11 +153,11 @@ h1 {
   height: @topPanelHeight;
 }
 
-.scrolled-top{
+.scrolled-top {
   background-color: @topPanelColor;
 }
 
-.top-menu{
+.top-menu {
   margin-top: 15px;
   margin-right: 30px;
   float: right;
@@ -158,7 +165,7 @@ h1 {
 
 .logo-text {
   display: inline-block;
-  background: linear-gradient(to bottom right, @logoFirstColor, @logoSecColor);//todo
+  background: linear-gradient(to bottom right, @logoFirstColor, @logoSecColor); //todo
   -webkit-background-clip: text;
   color: transparent;
   font-family: Brush Script MT, Papyrus, cursive;
@@ -180,7 +187,6 @@ h1 {
   background-color: @siteDescriptionColor;
 
 }
-
 
 .d1 {
   display: none;
@@ -288,34 +294,34 @@ h1 {
   text-decoration: underline;
 }
 
-.bottom-content{
+.bottom-content {
   background-color: @bottomColor;
   height: 400px;
 }
 
-.join-us{
+.join-us {
   background-color: @descriptionColor;
   height: 380px;
 }
 
-.join-us-text{
+.join-us-text {
   font-size: 40px;
   padding-top: 70px;
   margin-left: 25%;
   color: white;
 }
 
-.btn-join{
+.btn-join {
   border: 2px solid @joinColor !important;
   margin-left: 45%;
   padding: 17px 37px;
 }
 
-.btn-join:hover{
+.btn-join:hover {
   background: @joinColor;
 }
 
-.box{
+.box {
   margin: 120px 0;
   width: 100%;
   height: 380px;
@@ -325,51 +331,51 @@ h1 {
   display: inline-block;
 }
 
-.box2{
+.box2 {
   //margin-bottom: 120px;
   //background-color: rgba(0, 0, 0, 0.06);
   //width: 100%;
   //height: 100%;
 }
 
-.box-line{
+.box-line {
   //display: table;
   padding-top: 33px;
   padding-left: 310px;
   color: white;
 }
 
-.places{
+.places {
   float: left;
 }
 
-.dates{
+.dates {
   padding-right: 310px;
   float: right;
 }
 
-.box-input{
+.box-input {
   width: 270px;
   display: block;
   //float:left;
   margin-bottom: 8px;
 }
 
-.from-label{
+.from-label {
 
 }
 
-.experiment{
+.experiment {
   position: absolute;
   width: 100%;
   height: 100%;
   //background-color: rgba(36, 36, 36, 0.71);
 }
 
-.box-btn{
+.box-btn {
   position: absolute;
- // margin: auto;
- // bottom: -250px;
+  // margin: auto;
+  // bottom: -250px;
   left: 45%;
   top: 390px;
 }
@@ -385,26 +391,27 @@ h1 {
   color: white;
 }
 
-.box-label{
+.box-label {
   margin: 0 5px;
   display: block;
   font-size: 20px;
 }
 
-.types{
+.types {
   margin-bottom: 20px;
 }
-.radio-trip{
+
+.radio-trip {
   margin-right: 25px;
 }
 
-.one-way-mode{
-  #to-input, #back-input, .to-label, .back-label{
+.one-way-mode {
+  #to-input, #back-input, .to-label, .back-label {
     display: none;
   }
 }
 
-.name-lb{
+.name-lb {
   position: relative;
   top: 230px;
   left: 50px;
@@ -412,7 +419,7 @@ h1 {
   font-weight: 100;
 }
 
-.about-text{
+.about-text {
   position: relative;
   margin: auto;
   width: 600px;
@@ -421,15 +428,14 @@ h1 {
   font-size: 30px;
 }
 
-.mail{
+.mail {
   font-weight: bold;
 }
 
-
 .about-photo {
-  z-index:1;
+  z-index: 1;
   top: 80px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   left: 26%;
   position: absolute;
   width: 200px;
@@ -437,19 +443,18 @@ h1 {
   border-radius: 50%;
 }
 
-.stas{
+.stas {
   background: url("../images/stas.jpg") no-repeat;
   background-size: cover;
 }
 
-.angi{
+.angi {
   left: 58%;
   background: url("../images/angi.jpg") no-repeat center;
   background-size: cover;
 }
 
 //////////////////////////////////
-
 
 /* brandico */
 [class*="brandico-"]:before {
@@ -574,10 +579,7 @@ h1 {
   border-color: #3b5a7c;
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 section#contact {
   background-color: #222222;
@@ -588,36 +590,45 @@ section#contact {
   padding: 30px 0px;
   margin-top: 7%;
 }
+
 section#contact .section-heading {
   color: white;
 }
+
 section#contact .form-group {
   margin-bottom: 25px;
 }
+
 section#contact .form-group input,
 section#contact .form-group textarea {
   padding: 20px;
 }
+
 section#contact .form-group input.form-control {
   height: auto;
 }
+
 section#contact .form-group textarea.form-control {
   height: 236px;
 }
+
 section#contact .form-control:focus {
   border-color: #fed136;
   box-shadow: none;
 }
+
 section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
-.gellary_bg_none img{
+
+.gellary_bg_none img {
   width: 100%;
   height: 250px;
 }
+
 section#contact :-moz-placeholder {
   /* Firefox 18- */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -625,6 +636,7 @@ section#contact :-moz-placeholder {
   font-weight: 700;
   color: #eeeeee;
 }
+
 section#contact ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -632,28 +644,33 @@ section#contact ::-moz-placeholder {
   font-weight: 700;
   color: #eeeeee;
 }
+
 section#contact :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #eeeeee;
 }
+
 section#contact .text-danger {
   color: #e74c3c;
 }
 
-.about_our_company{
+.about_our_company {
   text-align: center;
 }
-.about_our_company h1{
+
+.about_our_company h1 {
   font-size: 25px;
 }
+
 .titleline-icon {
   position: relative;
   max-width: 100px;
   border-top: 4px double #F99700;
   margin: 20px auto 20px;
 }
+
 .titleline-icon:after {
   position: absolute;
   top: -11px;
@@ -672,3 +689,109 @@ section#contact .text-danger {
   background: #ffffff;
 }
 
+.test-area {
+  width: 100%;
+  height: 100%;
+  background-color: @quizColor;
+}
+
+.quiz-segment {
+  padding: 100px 300px;
+}
+
+.quiz-name {
+  padding-left: 10%;
+  margin-top: 130px;
+  color: black;
+  font-size: 45px;
+}
+
+.quiz-res {
+  padding-left: 30px;
+  margin-top: 130px;
+  color: black;
+  font-size: 40px;
+}
+
+.start-quiz {
+  margin: auto;
+  padding: 20px 33px;
+  border: 2px solid rgba(255, 238, 192, 0.73);
+}
+
+.start-quiz:hover {
+  background-color: rgba(255, 205, 158, 0.67);
+  color: white;
+}
+
+.box-quiz {
+  top: 330px;
+}
+
+.questions {
+  display: none;
+}
+
+.quiz-mode {
+  .quiz-name, #start-quiz {
+    display: none;
+  }
+  .questions {
+    display: block;
+  }
+}
+
+.im-q {
+  margin: 20px 0;
+  width: 400px;
+  height: 300px;
+}
+
+.im-q1 {
+  background: url("../images/question1.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-q2 {
+  background: url("../images/question2.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-q3 {
+  background: url("../images/question3.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-res{
+  background-size: cover;
+}
+
+.question {
+  margin: 50px 0;
+}
+
+.quiz-radio {
+  font-size: 25px;
+}
+
+.box-finish {
+  padding-left: 45%;
+}
+
+.quiz-result {
+  display: none;
+}
+
+.finish-quiz-mode {
+  .question, .quiz-name, #start-quiz {
+    display: none;
+  }
+  .quiz-result {
+    display: block;
+  }
+
+}
+#result-quiz{
+  color: black;
+  font-size: 48px;
+}

@@ -28,3 +28,9 @@ exports.write = function(req, res) {
         pageTitle: 'Travel'
     });
 };
+
+exports.where = function(req, res) {
+    res.render('where', {
+        pageTitle: 'Travel'
+    });
+};
