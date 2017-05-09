@@ -34,10 +34,6 @@ $('#go').click(function(){
     document.location.href = "way.html";
 });
 
-$('#where-to-go').click(function(){
-
-});
-
 $('#home').click(function(){
     document.location.href = "index.html";
 });
@@ -49,6 +45,11 @@ $('#way').click(function(){
 $('#about').click(function(){
     document.location.href = "about.html";
 });
+
+$('#where-to-go').click(function(){
+    document.location.href = "where.html";
+});
+
 
 $('#hotels').click(function(){
 
@@ -95,5 +96,3 @@ $("#one-way").change(function () {
     $("#return").prop('checked', false);
     $(".box-line").addClass("one-way-mode");
 });
-
-

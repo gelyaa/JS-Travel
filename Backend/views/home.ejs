@@ -1,0 +1,53 @@
+<% include common/header.ejs %>
+
+<div class="container-menu container-fluid">
+    <div class="menu container">
+        <h1 class="main-title" align="center"> Усi Пiци <span id="quantity" class="badge "> 9 </span></h1>
+
+        <div class="menu-titles">
+
+            <a href="#" id="all-pizzas" class="active btn btn-link btn-title" style="text-decoration: none"> Усi </a>
+            <a href="#" id="meat-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> М'яснi </a>
+            <a href="#" id="pineapple-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З ананасами </a>
+            <a href="#" id="mushroom-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З грибами </a>
+            <a href="#" id="sea-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> З морепродуктами </a>
+            <a href="#" id="veg-pizzas" class="btn btn-link btn-title" style="text-decoration: none"> Вега </a>
+
+        </div>
+
+        <div class="row" id="pizza_list">
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class=" panel right-panel no-orders">
+
+    <div class="right-title">
+
+        <div class="order-title"> Замовлення <span id="order-quantity" class="badge "> 0 </span>
+            <a href="#" class="btn btn-link" id="delete-order">Очистити замовлення</a>
+        </div>
+    </div>
+
+    <div class=" order-bill">
+        <span class="sum sum-order-title">Сума замовлення</span>
+        <span id="total-sum" class="sum sum-num"> 0 </span>
+        <span class="sum sum-num"> грн.</span>
+        <button class="btn btn-warning btn-block" id="order-btn" disabled>Замовити</button>
+    </div>
+
+    <div class="orders ">
+        <div class="empty-fridge">
+            <div class="no-orders-title"> Пусто в холодильнику ? </div>
+            <div class="no-orders-title"> Замовте піцу! </div>
+        </div>
+        <div id="orders-list"></div>
+    </div>
+
+</div>
+
+
+<% include common/footer.ejs %>
