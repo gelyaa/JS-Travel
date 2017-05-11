@@ -18,6 +18,8 @@ body {
   overflow-x: hidden;
 }
 
+html, body {margin: 0; height: 100%; overflow-x: hidden}
+
 * {
   font-family: Didot, sans-serif; //todo
 }
@@ -138,10 +140,30 @@ h1 {
 }
 
 .image-text {
+
   margin-top: 270px;
   margin-left: 47%;
   color: @menuItemColor;
   font-family: Brush Script MT, Papyrus, cursive;
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 600%;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 400%;
+  }
+}
+
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 100%;
+  }
 }
 
 .top-panel {
@@ -708,7 +730,7 @@ section#contact .text-danger {
 
 .quiz-res {
   padding-left: 30px;
-  margin-top: 50px;
+  margin-top: 40px;
   color: black;
   font-size: 40px;
 }
@@ -762,7 +784,28 @@ section#contact .text-danger {
   background-size: cover;
 }
 
-.im-res{
+.im-r1 {
+  background: url("../images/1.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-r2 {
+  background: url("../images/2.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-r3 {
+  background: url("../images/3.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.im-r4 {
+  background: url("../images/4.jpg") no-repeat;
+  background-size: cover;
+}
+
+.im-r5 {
+  background: url("../images/5.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -791,7 +834,12 @@ section#contact .text-danger {
   }
 
 }
-#result-quiz{
+
+#result-quiz {
   color: black;
   font-size: 44px;
+}
+
+#login {
+  display: none !important;
 }
