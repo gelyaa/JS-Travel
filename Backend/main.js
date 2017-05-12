@@ -8,18 +8,11 @@ var bodyParser = require('body-parser');
 
 function configureEndpoints(app) {
     var pages = require('./pages');
-   // var api = require('./api');
-
-    //Налаштування URL за якими буде відповідати сервер
-    //Отримання списку піц
-   // app.get('/api/get-pizza-list/', api.getPizzaList);
-   // app.post('/api/create-order/', api.createOrder);
 
     //Сторінки
     //Головна сторінка
     app.get('/', pages.home);
 
-    //Сторінка замовлення
     app.get('/way.html', pages.way);
 
     app.get('/about.html', pages.about);
@@ -46,19 +39,41 @@ function startServer(port) {
     app.use(morgan('dev'));
 
     //Розбір POST запитів
-    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
     //Налаштовуємо сторінки
     configureEndpoints(app);
 
+    app.get('/my-url.html', function (req, res) {
+        var url = req.query.url;
+        callForApiSkyscanner(res, url);
+    });
+
     //Запуск додатка за вказаним портом
     app.listen(port, function () {
-        console.log('My Application Running on http://localhost:'+port+'/');
+        console.log('My Application Running on http://localhost:' + port + '/');
     });
 
 }
 
+function callForApiSkyscanner(res, url) {
 
+    var http = require('http');
+    var body = '';
+    http.get({
+        host: 'partners.api.skyscanner.net',
+        path: url + '?apikey=prtl6749387986743898559646983194'
+    }, function (response) {
+        response.on('data', function (d) {
+            body += d;
+        });
+        response.on('end', function () {
+            res.send(body);
+        });
+    });
+    return body;
+
+};
 
 exports.startServer = startServer;

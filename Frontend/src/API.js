@@ -31,3 +31,7 @@ function backendPost(url, data, callback) {
         }
     })
 }
+
+exports.sendMessage = function(mail_info, callback) {
+    backendPost("/api/send-message/", mail_info, callback);
+};

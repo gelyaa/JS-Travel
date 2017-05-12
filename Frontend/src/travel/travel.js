@@ -2,20 +2,12 @@
  * Created by macuser on 24.03.17.
  */
 
-
-var $window = $(window);
-var $elem = $(".site-description")
-
-function isScrolledIntoView($elem, $window) {
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop + $window.height();
-    var elemTop = $elem.offset().top;
-    var elemBottom = elemTop + $elem.height();
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
+var $elem = $(".site-description");
+var countries = require('country-list')();
+var Templates = require('../Templates');
+var $cart = $(".way-results");
 
 $(document).on("scroll", function () {
-    // if (isScrolledIntoView($elem, $window))
     $elem.addClass("animate-description")
 });
 
@@ -38,29 +30,22 @@ $('#go').click(function () {
 $('#home').click(function () {
     document.location.href = "index.html";
 });
+$('#logo').click(function () {
+    document.location.href = "index.html";
+});
 
 $('#way').click(function () {
     document.location.href = "way.html";
 });
 
-$('#about').click(function () {
+$('.about').click(function () {
     document.location.href = "about.html";
-});
-$('#contactus').click(function () {
-    document.location.href = "write.html";
 });
 
 $('#where-to-go').click(function () {
     document.location.href = "where.html";
 });
 
-$('#hotels').click(function () {
-
-});
-
-$('#events').click(function () {
-
-});
 
 $(function () {
     var inp = $("#there-input");
@@ -92,13 +77,13 @@ $("#one-way").change(function () {
     $(".box-line").addClass("one-way-mode");
 });
 
-$('#login').click(function () {
-    document.location.href = "login.html";
-});
-
 $('#join').click(function () {
     document.location.href = "way.html";
 });
+$('#contactus').click(function () {
+    document.location.href = "write.html";
+});
+
 $('#start-quiz').click(function () {
     $(".im-test").css("height", "2100px");
     $(".quiz-segment").addClass("quiz-mode");
@@ -162,15 +147,94 @@ $('#finish-quiz').click(function () {
 
 });
 
+//виклик бека з АПІ
+$('#find').click(function () {
+    var $from = $("#from-input");
+    var $to = $("#to-input");
+    var $there = $("#there-input");
+    var $back = $("#back-input");
+
+    if ($from.val() !== undefined && $to.val() !== undefined &&
+        $there.val() !== undefined && $back.val() !== undefined) {
+
+        var fromText = $from.val();
+        var toText = $to.val();
+        var fromDate = $there.val();
+        var toDate = $back.val();
+
+        function getYear(s) {
+            return s.substring(6);
+        }
+
+        function getMonth(s) {
+            return s.substring(0, 2);
+        }
+
+        function getDay(s) {
+            return s.substring(3, 5);
+        }
+
+        fromDate = getYear(fromDate) + "-" + getMonth(fromDate) + "-" + getDay(fromDate);
+        toDate = getYear(toDate) + "-" + getMonth(toDate) + "-" + getDay(toDate);
+        var from = countries.getCode(fromText);
+        var to = countries.getCode(toText);
+        console.log(from);
+        console.log(to);
+
+
+        $.get("/my-url.html?url=/apiservices/browseroutes/v1.0/UA/uah/en-US/" + from + "/" + to + "/" + fromDate + "/" + toDate + "", function (string) {
+            if (string !== undefined) {
+                var data = JSON.parse(string);
+                console.log('data: ', data);
+                for (var i = 0; i < string.length; i++) {
+                    console.log('data: ', data.Carriers[i].Name);
+                    console.log('from date/time: ', data.Quotes[i].OutboundLeg.DepartureDate);
+                    console.log('back date/time: ', data.Quotes[i].InboundLeg.DepartureDate);
+                    console.log('price: ', data.Quotes[i].MinPrice, data.Currencies[i].Symbol);
+
+                    var goodTOTime = "There: "+(data.Quotes[i].OutboundLeg.DepartureDate.substring(0, 10))+" "+" at "+(data.Quotes[i].OutboundLeg.DepartureDate.substring(11, 19));
+                    var goodBackTime = "Back: "+( data.Quotes[i].QuoteDateTime.substring(0, 10))+" "+" at "+( data.Quotes[i].QuoteDateTime.substring(11, 19));
+                    var item = {
+                        name : data.Carriers[i].Name,
+                        start : fromText,
+                        end : toText,
+                        timeTo : goodTOTime,
+                        timeBack : goodBackTime,
+                        price : data.Quotes[i].MinPrice +data.Currencies[i].Symbol
+                    };
+
+                    $(".im2").css("height", "1300px");
+                    $(".way-results").addClass("visible");
+                    add(item);
+
+
+                }
+
+            }
+        });
+
+    }
+});
+
+function add(item) {
+    var html_code = Templates.WayResult({item: item});
+    var $node = $(html_code);
+    $cart.append($node);
+}
 
 $('#btn-send').click(function () {
-
+    var textToWrite = "Name: " + $("#name").val() + ".Mail: " + $("#email").val() + ".Phone: " + $("#phone").val() + "\n" + $("#message").val();
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var fileNameToSaveAs = "message.html";
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    downloadLink.click();
 });
 
 
 function init() {
 }
-
-
 
 exports.init = init;
