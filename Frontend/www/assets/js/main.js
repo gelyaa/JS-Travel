@@ -216,16 +216,19 @@ $('#find').click(function () {
                     console.log('from date/time: ', data.Quotes[i].OutboundLeg.DepartureDate);
                     console.log('back date/time: ', data.Quotes[i].InboundLeg.DepartureDate);
                     console.log('price: ', data.Quotes[i].MinPrice, data.Currencies[i].Symbol);
-
-                    var goodTOTime = "There: "+(data.Quotes[i].OutboundLeg.DepartureDate.substring(0, 10))+" "+" at "+(data.Quotes[i].OutboundLeg.DepartureDate.substring(11, 19));
-                    var goodBackTime = "Back: "+( data.Quotes[i].QuoteDateTime.substring(0, 10))+" "+" at "+( data.Quotes[i].QuoteDateTime.substring(11, 19));
+                    var goodTOTime = "There: " + (data.Quotes[i].OutboundLeg.DepartureDate.substring(0, 10)) + " " + " at " + (data.Quotes[i].OutboundLeg.DepartureDate.substring(11, 19));
+                    if ($('#one-way').is(':checked')) {
+                        goodBackTime = " ";
+                    } else {
+                        var goodBackTime = "Back: " + ( data.Quotes[i].InboundLeg.DepartureDate.substring(0, 10)) + " " + " at " + ( data.Quotes[i].InboundLeg.DepartureDate.substring(11, 19));
+                    }
                     var item = {
-                        name : data.Carriers[i].Name,
-                        start : fromText,
-                        end : toText,
-                        timeTo : goodTOTime,
-                        timeBack : goodBackTime,
-                        price : data.Quotes[i].MinPrice +data.Currencies[i].Symbol
+                        name: data.Carriers[i].Name,
+                        start: fromText,
+                        end: toText,
+                        timeTo: goodTOTime,
+                        timeBack: goodBackTime,
+                        price: data.Quotes[i].MinPrice + data.Currencies[i].Symbol
                     };
 
                     $(".im2").css("height", "1300px");
@@ -248,8 +251,8 @@ function add(item) {
 }
 
 $('#btn-send').click(function () {
-    var textToWrite = "Name: " + $("#name").val() + ".Mail: " + $("#email").val() + ".Phone: " + $("#phone").val() + "\n" + $("#message").val();
-    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var textToWrite = "Name: " + $("#name").val() + ". Mail: " + $("#email").val() + ". Phone: " + $("#phone").val() + '<br />' + $("#message").val();
+    var textFileAsBlob = new Blob([textToWrite], {type: 'text/plain'});
     var fileNameToSaveAs = "message.html";
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
