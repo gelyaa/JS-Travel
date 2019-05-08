@@ -1,3 +1,3 @@
 # JS-Travel
 
-Yay
+Yay!
